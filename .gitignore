@@ -1,0 +1,8 @@
+/local_settings.lua
+/debug
+/release
+/shipping
+*.xcodeproj
+*.vcxproj
+*.sln
+*.suo
