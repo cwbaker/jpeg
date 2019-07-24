@@ -1,11 +1,11 @@
 
-for _, forge in forge:builds('cc_.*') do
-    local forge = forge:inherit {
+for _, toolset in toolsets('cc_.*') do
+    local toolset = toolset:inherit {
         warning_level = 0;
     };
-    forge:all {
-        forge:StaticLibrary '${lib}/jpeg_${architecture}' {
-            forge:Cc '${obj}/%1' {
+    toolset:all {
+        toolset:StaticLibrary '${lib}/jpeg_${architecture}' {
+            toolset:Cc '${obj}/%1' {
                 'jaricom.c',
                 'jcapimin.c',
                 'jcapistd.c',
