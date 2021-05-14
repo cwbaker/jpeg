@@ -4,7 +4,7 @@ for _, toolset in toolsets('cc_.*') do
         warning_level = 0;
     };
     toolset:all {
-        toolset:StaticLibrary '${lib}/jpeg_${architecture}' {
+        toolset:StaticLibrary '${lib}/jpeg_${platform}_${architecture}' {
             toolset:Cc '${obj}/%1' {
                 'jaricom.c',
                 'jcapimin.c',
