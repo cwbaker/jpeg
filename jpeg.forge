@@ -1,11 +1,11 @@
 
-for _, toolset in toolsets('cc_.*') do
-    local toolset = toolset:inherit {
+for _, cc in toolsets('^cc_.*') do
+    local cc = cc:inherit {
         warning_level = 0;
     };
-    toolset:all {
-        toolset:StaticLibrary '${lib}/jpeg_${platform}_${architecture}' {
-            toolset:Cc '${obj}/%1' {
+    cc:all {
+        cc:StaticLibrary '${lib}/jpeg_${platform}_${architecture}' {
+            cc:Cc '${obj}/%1' {
                 'jaricom.c',
                 'jcapimin.c',
                 'jcapistd.c',
